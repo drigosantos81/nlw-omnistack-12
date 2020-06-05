@@ -8,9 +8,15 @@ import { SvgUri } from 'react-native-svg';
 
 const Points = () => {
     const navigation = useNavigation();
+
     function handleNavigateBack() {
         navigation.goBack();
     }
+
+    function handleNavigateToDetail() {
+        navigation.navigate('Detail');
+    }
+    
 
     return (
         <>
@@ -33,6 +39,7 @@ const Points = () => {
                       }}>
                     <Marker 
                       style={styles.mapMarker}
+                      onPress={handleNavigateToDetail}
                       coordinate={{
                         latitude: -12.9591809,
                         longitude: -38.497483,
